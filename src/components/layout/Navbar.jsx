@@ -1,11 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Volume2, VolumeX, Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import bgMusic from '../../assets/hayden-folker-cloud-nine.mp3';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [soundOn, setSoundOn] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const audioRef = useRef(null);
+
+  // Initialize audio
+  useEffect(() => {
+    const audio = new Audio(bgMusic);
+    audio.loop = true;
+    audio.volume = 0.4;
+    audioRef.current = audio;
+    return () => {
+      audio.pause();
+      audio.src = '';
+    };
+  }, []);
+
+  // Play / pause based on soundOn
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (soundOn) {
+      audio.play().catch(() => {});
+    } else {
+      audio.pause();
+    }
+  }, [soundOn]);
 
   useEffect(() => {
     const handleScroll = () => {
