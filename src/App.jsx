@@ -32,7 +32,6 @@ function App() {
       infinite: false,
     });
     
-    // Make lenis globally accessible for anchor link scrolling
     window.lenis = lenis;
 
     lenis.on('scroll', ScrollTrigger.update);
@@ -43,7 +42,6 @@ function App() {
     
     gsap.ticker.lagSmoothing(0);
 
-    // Refresh triggers to account for loaded images
     setTimeout(() => {
       ScrollTrigger.refresh();
     }, 1000);

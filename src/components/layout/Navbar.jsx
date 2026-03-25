@@ -52,10 +52,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'ABOUT', href: '#mission' },
-    { name: 'DOMAINS', href: '#domains' },
-    { name: 'TIMELINE', href: '#timeline' },
-    { name: 'PRIZES', href: '#rewards' },
+    { name: 'ABOUT', href: '#about' },
+    { name: 'TRACKS', href: '#tracks' },
+    { name: 'SCHEDULE', href: '#schedule' },
+    { name: 'PRIZES', href: '#prizes' },
     { name: 'FAQS', href: '#faqs' },
   ];
 
@@ -69,7 +69,8 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-3 relative z-50">
           <a href="#" className="font-display font-black text-2xl tracking-tighter text-white flex items-center gap-2 group">
-            <span className="text-primary group-hover:text-glow transition-all duration-300">HACK</span>HUSTLE
+            <span className="text-primary group-hover:text-glow transition-all duration-300">⚡ ENERGIZE</span>
+            <span className="text-accent text-sm font-bold tracking-wider">2026</span>
             <div className="h-1.5 w-1.5 bg-primary rounded-full animate-pulse-slow"></div>
           </a>
         </div>

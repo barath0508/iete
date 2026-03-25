@@ -9,56 +9,35 @@ const GallerySection = () => {
   const imagesRef = useRef([]);
 
   const images = [
-    { src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800', alt: 'Cyberpunk desk setup with neon lighting' },
-    { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800', alt: 'Computer screen with code in darkness' },
-    { src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800', alt: 'Team collaborating late at night' },
-    { src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800', alt: 'Glowing hardware setup' },
-    { src: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&q=80&w=800', alt: 'Monitor displaying dense code arrays' },
-    { src: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800', alt: 'Conceptual neon money and tech grid' },
+    { src: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=800', alt: 'Solar panels at sunset' },
+    { src: 'https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=800', alt: 'Smart grid control room' },
+    { src: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=800', alt: 'Wind turbines on green hills' },
+    { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800', alt: 'Hardware prototyping lab' },
+    { src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800', alt: 'Circuit boards and electronics' },
+    { src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800', alt: 'Digital energy network visualization' },
   ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header
       gsap.from('.gallery-header', {
         opacity: 0, y: 40, duration: 0.8, ease: 'power3.out',
         scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' }
       });
 
-      // Clip-path reveal + parallax tilt for each image
       imagesRef.current.forEach((img, i) => {
         if (!img) return;
-        const isEven = i % 2 === 0;
         const isLeft = i % 3 === 0;
-
-        // Clip-path reveal
         gsap.fromTo(img,
-          { 
-            clipPath: isLeft ? 'inset(0 100% 0 0)' : 'inset(0 0 100% 0)',
-            opacity: 0 
-          },
+          { clipPath: isLeft ? 'inset(0 100% 0 0)' : 'inset(0 0 100% 0)', opacity: 0 },
           {
-            clipPath: 'inset(0 0% 0% 0)',
-            opacity: 1,
-            duration: 1.2,
-            ease: 'power3.inOut',
-            scrollTrigger: {
-              trigger: img,
-              start: 'top 88%',
-            }
+            clipPath: 'inset(0 0% 0% 0)', opacity: 1,
+            duration: 1.2, ease: 'power3.inOut',
+            scrollTrigger: { trigger: img, start: 'top 88%' }
           }
         );
-
-        // Parallax shift on scroll
         gsap.to(img, {
-          y: isEven ? -30 : 30,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: img,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1,
-          }
+          y: i % 2 === 0 ? -30 : 30, ease: 'none',
+          scrollTrigger: { trigger: img, start: 'top bottom', end: 'bottom top', scrub: 1 }
         });
       });
     }, sectionRef);
@@ -69,7 +48,7 @@ const GallerySection = () => {
     <section id="gallery" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5 bg-black">
       <div className="container mx-auto px-6 md:px-12 text-center">
         <h2 className="gallery-header text-4xl md:text-6xl font-display font-black tracking-tighter text-white mb-16">
-          THE <span className="text-primary text-glow">ARCHIVES</span>
+          THE <span className="text-primary text-glow">VISION</span>
         </h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -79,25 +58,16 @@ const GallerySection = () => {
               ref={el => imagesRef.current[i] = el}
               className="relative overflow-hidden group aspect-video rounded-sm border border-white/10 hover:border-primary/80 transition-colors duration-500"
             >
-              {/* Golden vignette */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none duration-700"></div>
-              
-              {/* Color overlay */}
               <div className="absolute inset-0 bg-primary mix-blend-color opacity-0 group-hover:opacity-20 transition-opacity z-10 pointer-events-none duration-500"></div>
-              
               <img 
-                src={img.src} 
-                alt={img.alt} 
+                src={img.src} alt={img.alt} 
                 className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700 ease-out"
                 loading="lazy"
               />
-              
-              {/* Caption overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20">
                 <p className="text-left font-mono text-xs text-primary font-bold tracking-widest uppercase truncate">{img.alt}</p>
               </div>
-
-              {/* Corner accent */}
               <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-t-primary/0 border-l-[40px] border-l-transparent group-hover:border-t-primary/30 transition-all duration-500"></div>
             </div>
           ))}

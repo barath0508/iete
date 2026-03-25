@@ -12,7 +12,6 @@ const Mission = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Reveal line draws from left
       gsap.fromTo(lineRef.current,
         { width: 0 },
         {
@@ -21,53 +20,27 @@ const Mission = () => {
         }
       );
 
-      // Text children stagger in
       gsap.from(textRef.current.children, {
         opacity: 0, y: 40, duration: 0.9, stagger: 0.15, ease: 'power3.out',
         scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' }
       });
 
-      // Stat cards entrance with 3D feel
       gsap.from(statsRef.current, {
         opacity: 0, scale: 0.8, y: 60, rotationX: 15,
         duration: 0.8, stagger: 0.12, ease: 'back.out(1.7)',
         scrollTrigger: { trigger: sectionRef.current, start: 'top 60%' }
       });
-
-      // Counter animations
-      const statValues = ['24', '5', '10000', '500'];
-      statsRef.current.forEach((el, i) => {
-        if (!el) return;
-        const numEl = el.querySelector('.stat-number');
-        if (!numEl) return;
-        const target = parseInt(statValues[i]);
-        gsap.fromTo(numEl, 
-          { innerText: 0 },
-          {
-            innerText: target,
-            duration: 2,
-            ease: 'power2.out',
-            snap: { innerText: 1 },
-            scrollTrigger: { trigger: sectionRef.current, start: 'top 60%' }
-          }
-        );
-      });
-
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
-  // 3D tilt handler for stat cards
   const handleMouseMove = (e, el) => {
     const rect = el.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
     gsap.to(el, {
-      rotationY: x * 15,
-      rotationX: -y * 15,
-      duration: 0.3,
-      ease: 'power2.out',
-      transformPerspective: 800,
+      rotationY: x * 15, rotationX: -y * 15,
+      duration: 0.3, ease: 'power2.out', transformPerspective: 800,
     });
   };
   const handleMouseLeave = (el) => {
@@ -75,15 +48,14 @@ const Mission = () => {
   };
 
   const stats = [
-    { value: '24', label: 'Hours', suffix: '' },
-    { value: '5+', label: 'Domains', suffix: '+' },
-    { value: '$10k+', label: 'Prizes', suffix: 'k+', prefix: '$' },
-    { value: '500+', label: 'Hackers', suffix: '+' },
+    { icon: '📅', value: 'APR 8', label: 'Date', suffix: '' },
+    { icon: '⏰', value: '5 HRS', label: 'Duration', suffix: '' },
+    { icon: '👥', value: '2–4', label: 'Team Size', suffix: '' },
+    { icon: '💰', value: '₹200', label: 'Per Team', suffix: '' },
   ];
 
   return (
     <section id="about" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5">
-      {/* Decorative reveal line */}
       <div ref={lineRef} className="absolute top-0 left-0 h-px bg-gradient-to-r from-primary via-primary/50 to-transparent" style={{ width: 0 }}></div>
 
       <div className="container mx-auto px-6 md:px-12">
@@ -98,10 +70,10 @@ const Mission = () => {
               <span className="text-primary border-b-4 border-primary">HACKATHON.</span>
             </h2>
             <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
-              We live in a world where technology shapes reality. But true innovation requires more than just knowing how to code—it requires the courage to build something that matters, something that stands against the ordinary.
+              Whether you're a software wizard or a hardware geek, it's time to innovate the grid! ENERGIZE 2026 challenges you to build the future of sustainable energy technology.
             </p>
             <p className="text-zinc-400 text-lg leading-relaxed">
-              Hack Hustle Code Knight is a 24-hour immersive experience. Assemble your team, choose your domain, and engineer solutions that pierce through the darkness. The city needs a hero. Will it be you?
+              Organized by the <span className="text-accent font-semibold">IETE Students' Forum</span> at <span className="text-white font-semibold">Rajalakshmi Institute of Technology</span>, this high-stakes on-spot hackathon is where code meets carbon neutrality.
             </p>
           </div>
           
@@ -116,10 +88,9 @@ const Mission = () => {
                   onMouseMove={(e) => handleMouseMove(e, statsRef.current[i])}
                   onMouseLeave={() => handleMouseLeave(statsRef.current[i])}
                 >
-                  <div className="text-4xl md:text-5xl font-display font-black text-white group-hover:text-primary transition-colors mb-2">
-                    {stat.prefix && <span>{stat.prefix}</span>}
-                    <span className="stat-number">0</span>
-                    {stat.suffix && <span>{stat.suffix}</span>}
+                  <div className="text-2xl mb-3">{stat.icon}</div>
+                  <div className="text-3xl md:text-4xl font-display font-black text-white group-hover:text-primary transition-colors mb-2">
+                    {stat.value}
                   </div>
                   <div className="text-sm text-zinc-500 font-bold uppercase tracking-widest">{stat.label}</div>
                 </div>

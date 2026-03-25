@@ -16,14 +16,17 @@
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 8px rgba(250, 204, 21, 0.8);
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.8), 0 0 20px rgba(0, 230, 118, 0.3);
+  }
+  
+  .text-glow-cyan {
+    text-shadow: 0 0 8px rgba(0, 188, 212, 0.8), 0 0 20px rgba(0, 188, 212, 0.3);
   }
   
   .border-glow {
-    box-shadow: 0 0 10px rgba(250, 204, 21, 0.4), inset 0 0 5px rgba(250, 204, 21, 0.2);
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.4), inset 0 0 5px rgba(0, 230, 118, 0.2);
   }
 
-  /* No scrollbar utility */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -62,8 +65,8 @@
 
 /* ── Glow Pulse ── */
 @keyframes glow-pulse {
-  0%, 100% { text-shadow: 0 0 10px rgba(250, 204, 21, 0.6), 0 0 30px rgba(250, 204, 21, 0.2); }
-  50%      { text-shadow: 0 0 20px rgba(250, 204, 21, 1), 0 0 60px rgba(250, 204, 21, 0.4), 0 0 100px rgba(250, 204, 21, 0.1); }
+  0%, 100% { text-shadow: 0 0 10px rgba(0, 230, 118, 0.6), 0 0 30px rgba(0, 230, 118, 0.2); }
+  50%      { text-shadow: 0 0 20px rgba(0, 230, 118, 1), 0 0 60px rgba(0, 230, 118, 0.4), 0 0 100px rgba(0, 230, 118, 0.1); }
 }
 
 /* ── Node Pulse Ring ── */
@@ -80,11 +83,17 @@
   100% { transform: scale(1) rotate(0deg); opacity: 1; }
 }
 
-/* ── Grid overlay ── */
+/* ── Energy Flow (lightning pulse) ── */
+@keyframes energy-flow {
+  0%, 100% { opacity: 0.3; filter: brightness(1); }
+  50%      { opacity: 1; filter: brightness(1.5); }
+}
+
+/* ── Grid overlay (energy grid) ── */
 .grid-overlay {
   background-image:
-    linear-gradient(rgba(250, 204, 21, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(250, 204, 21, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 230, 118, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 230, 118, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -94,7 +103,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(250, 204, 21, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 230, 118, 0.08) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
   transition: transform 0.15s ease-out, opacity 0.3s;
@@ -106,9 +115,9 @@
   background: linear-gradient(
     110deg,
     transparent 20%,
-    rgba(250, 204, 21, 0.15) 45%,
-    rgba(250, 204, 21, 0.3) 50%,
-    rgba(250, 204, 21, 0.15) 55%,
+    rgba(0, 230, 118, 0.15) 45%,
+    rgba(0, 230, 118, 0.3) 50%,
+    rgba(0, 230, 118, 0.15) 55%,
     transparent 80%
   );
   background-size: 200% 100%;
