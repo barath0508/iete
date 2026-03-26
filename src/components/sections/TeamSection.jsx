@@ -27,23 +27,24 @@ const TeamSection = () => {
   const headerRef = useRef(null);
 
   const organizers = [
-    { badge: 'FACULTY ADVISOR', name: 'DR. G NIRMALAPRIYA', role: 'HOD - ECE Department', contact: '+91 9025469644', link: '#' },
+    { badge: 'FACULTY ADVISOR', name: 'DR. G NIRMALAPRIYA', role: 'HOD - ECE Department', contact: '+91 9025469644', link: 'https://www.linkedin.com/in/nirmala-priya-790932156/' },
     { badge: 'FACULTY COORDINATOR', name: 'MS. KALAIVANI S', role: 'IETE Faculty Coordinator', contact: '+91 9486966148', link: '#' },
-    { badge: 'CHAIRMAN', name: 'HARINI S', role: 'ECE III A', contact: '+91 6383078169', link: '#' },
-    { badge: 'VICE CHAIRMAN', name: 'JEYANANDH V S', role: 'VLSI III A', contact: '+91 9043580630', link: '#' },
-    { badge: 'HONORARY SECRETARY', name: 'KARTHIK S', role: 'ECE II A', contact: '+91 7200507050', link: '#' },
-    { badge: 'JOINT SECRETARY', name: 'SASIKUMAR M', role: 'VLSI II C', contact: '+91 9361957420', link: '#' },
-    { badge: 'TREASURER', name: 'MADESH S', role: 'ECE II B', contact: '+91 9445396430', link: '#' },
-    { badge: 'TREASURER', name: 'KAVIPRIYA D', role: 'VLSI II B', contact: '+91 9003562213', link: '#' },
-    { badge: 'EXECUTIVE TECHNICAL', name: 'BHAVANI SANKAR M', role: 'ECE II A', contact: '+91 9790896599', link: '#' },
-    { badge: 'EXECUTIVE TECHNICAL', name: 'BARATH R', role: 'ECE II A', contact: '+91 9442169681', link: '#' },
-    { badge: 'EXECUTIVE TECHNICAL', name: 'SUJI V', role: 'VLSI II C', contact: '+91 7200831242', link: '#' },
-    { badge: 'EXECUTIVE TECHNICAL', name: 'SUPRRAJA D', role: 'VLSI II C', contact: '+91 8870572444', link: '#' },
-    { badge: 'EXECUTIVE MEDIA AND CREATIVES', name: 'YOGANANDH', role: 'ECE II C', contact: '+91 9445630998', link: '#' },
-    { badge: 'EXECUTIVE MEDIA AND CREATIVES', name: 'HARISUDHAN S', role: 'VLSI II A', contact: '+91 8072281106', link: '#' },
-    { badge: 'DOCUMENTATION', name: 'PREETHI B', role: 'ECE II B', contact: '+91 8838320465', link: '#' },
-    { badge: 'DOCUMENTATION', name: 'JEEVITHA A G', role: 'VLSI II B', contact: '+91 8870978504', link: '#' },
-  ];
+    { badge: 'CHAIRMAN', name: 'HARINI S', role: '3rd year ECE A', contact: '+91 6383078169', link: '#' },
+    { badge: 'VICE CHAIRMAN', name: 'JEYANANDH V S', role: '3rd year VLSI A', contact: '+91 9043580630', link: 'https://www.linkedin.com/in/jeyanandh-v-s/' },
+    { badge: 'HONORARY SECRETARY', name: 'KARTHIK S', role: '2nd year ECE A', contact: '+91 7200507050', link: 'https://www.linkedin.com/in/karthik2745/' },
+    { badge: 'JOINT SECRETARY', name: 'SASIKUMAR M', role: '2nd year VLSI C', contact: '+91 9361957420', link: '#' },
+    { badge: 'TREASURER', name: 'MADESH S', role: '2nd year ECE B', contact: '+91 9445396430', link: 'https://www.linkedin.com/in/s-a-madesh/' },
+    { badge: 'TREASURER', name: 'KAVIPRIYA D', role: '2nd year VLSI B', contact: '+91 9003562213', link: '#' },
+    { badge: 'EXECUTIVE TECHNICAL', name: 'BHAVANI SANKAR M', role: '2nd year ECE A', contact: '+91 9790896599', link: 'https://www.linkedin.com/in/bhavani-sankar-m-kdys-lkjfiytrstrsuhihoug/' },
+    { badge: 'EXECUTIVE TECHNICAL', name: 'BARATH R', role: '2nd year ECE A', contact: '+91 9442169681', link: 'https://www.linkedin.com/in/barath0508/' },
+    { badge: 'EXECUTIVE TECHNICAL', name: 'SUJI V', role: '2nd year VLSI C', contact: '+91 7200831242', link: '#' },
+    { badge: 'EXECUTIVE TECHNICAL', name: 'SUPRRAJA D', role: '2nd year VLSI C', contact: '+91 8870572444', link: '#' },
+    { badge: 'EXECUTIVE MEDIA AND CREATIVES', name: 'YOGANANDH', role: '2nd year ECE C', contact: '+91 9445630998', link: '#' },
+    { badge: 'EXECUTIVE MEDIA AND CREATIVES', name: 'HARISUDHAN S', role: '2nd year VLSI A', contact: '+91 8072281106', link: '#' },
+    { badge: 'DOCUMENTATION', name: 'PREETHI B', role: '2nd year ECE B', contact: '+91 8838320465', link: '#' },
+    { badge: 'DOCUMENTATION', name: 'JEEVITHA A G', role: '2nd year VLSI B', contact: '+91 8870978504', link: '#' },
+];
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
