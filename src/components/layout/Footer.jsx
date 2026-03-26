@@ -36,9 +36,17 @@ const Footer = () => {
   return (
     <footer ref={footerRef} className="relative z-10 border-t border-white/10 bg-black pt-16 pb-8">
       <div className="container mx-auto px-6 md:px-12 text-center">
-        <h2 className="footer-cta text-4xl md:text-6xl font-display font-black tracking-tighter mb-4 text-primary animate-glow-pulse">
-          ⚡ POWER THE FUTURE
-        </h2>
+        <div className="footer-cta flex flex-col items-center text-center mb-6">
+          <div className="p-3 border border-white/10 rounded-sm bg-black/50 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+              <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+          </div>
+          <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">JOIN THE REVOLUTION</p>
+          <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter text-white">
+            POWER THE <span className="text-primary">FUTURE</span>
+          </h2>
+        </div>
         <p className="footer-cta-desc text-zinc-400 mb-8 max-w-lg mx-auto">
           Don't just watch the future happen — power it. Join ENERGIZE 2026 and build the grid of tomorrow.
         </p>

@@ -65,20 +65,18 @@ const GallerySection = () => {
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
 
         {/* Header - aligned like other sections */}
-        <div ref={headerRef} className="flex items-start gap-6 mb-6">
-          <div className="p-3 border border-white/10 rounded-sm bg-black/50">
+        <div ref={headerRef} className="flex flex-col items-center text-center mb-6">
+          <div className="p-3 border border-white/10 rounded-sm bg-black/50 mb-4">
             <EyeIcon />
           </div>
-          <div className="text-left">
-            <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">ENERGIZE 2026</p>
-            <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
-              THE <span className="text-primary">VISION</span>
-            </h2>
-          </div>
+          <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">ENERGIZE 2026</p>
+          <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
+            THE <span className="text-primary">VISION</span>
+          </h2>
         </div>
 
         {/* Description */}
-        <p ref={descRef} className="text-zinc-400 text-lg leading-relaxed max-w-3xl mb-16">
+        <p ref={descRef} className="text-zinc-400 text-lg leading-relaxed max-w-xl mx-auto text-center mb-16">
           We envision a future powered by clean, intelligent energy systems. ENERGIZE 2026 brings together the brightest minds to prototype sustainable solutions — from solar-powered grids to AI-driven energy optimization. Here's a glimpse of the world we're building toward.
         </p>
         

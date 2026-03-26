@@ -74,18 +74,16 @@ const TimelineSection = () => {
   return (
     <section id="schedule" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="schedule-header flex items-start gap-6 mb-6">
-          <div className="p-3 border border-white/10 rounded-sm bg-black/50">
+        <div className="schedule-header flex flex-col items-center text-center mb-6">
+          <div className="p-3 border border-white/10 rounded-sm bg-black/50 mb-4">
             <ClockIcon />
           </div>
-          <div className="text-left">
-            <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">APRIL 8, 2026</p>
-            <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
-              THE <span className="text-primary">SCHEDULE</span>
-            </h2>
-          </div>
+          <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">APRIL 8, 2026</p>
+          <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
+            THE <span className="text-primary">SCHEDULE</span>
+          </h2>
         </div>
-        <p className="text-zinc-400 mb-16 max-w-3xl">A power-packed 5 hours of innovation.</p>
+        <p className="text-zinc-400 mb-16 max-w-xl mx-auto text-center">A power-packed 5 hours of innovation.</p>
 
         <div className="relative max-w-3xl mx-auto pl-8 md:pl-0">
           <div className="absolute top-0 bottom-0 left-8 md:left-1/2 md:-translate-x-1/2 w-0.5 bg-white/10"></div>

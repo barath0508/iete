@@ -54,20 +54,18 @@ const SponsorsSection = () => {
   return (
     <section id="sponsors" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5 bg-black overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl mb-12">
-        <div className="sponsors-header flex items-start gap-6 mb-6">
-          <div className="p-3 border border-white/10 rounded-sm bg-black/50">
+        <div className="sponsors-header flex flex-col items-center text-center mb-6">
+          <div className="p-3 border border-white/10 rounded-sm bg-black/50 mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
               <path d="m11 17 2 2a1 1 0 1 0 3-3" /><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" /><path d="m21 3 1 11h-2" /><path d="M3 3 2 14h2" /><path d="m3 3 2.08 1.56a2 2 0 0 0 1.68.34l.47-.14a5.79 5.79 0 0 1 5.15.78" />
             </svg>
           </div>
-          <div className="text-left">
-            <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">OUR PARTNERS</p>
-            <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
-              POWERED BY <span className="text-primary">THE BEST</span>
-            </h2>
-          </div>
+          <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">OUR PARTNERS</p>
+          <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
+            POWERED BY <span className="text-primary">THE BEST</span>
+          </h2>
         </div>
-        <p className="text-zinc-400 mb-6 max-w-3xl">Our partners and sponsors fuel the mission.</p>
+        <p className="text-zinc-400 mb-6 max-w-xl mx-auto text-center">Our partners and sponsors fuel the mission.</p>
       </div>
 
       <div className="flex flex-col gap-6 opacity-70">

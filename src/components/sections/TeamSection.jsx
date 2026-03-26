@@ -72,16 +72,14 @@ const TeamSection = () => {
   return (
     <section id="team" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5 bg-[#030a07]">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-        <div ref={headerRef} className="flex items-start gap-6 mb-16">
-          <div className="p-3 border border-white/10 rounded-sm bg-black/50">
+        <div ref={headerRef} className="flex flex-col items-center text-center mb-16">
+          <div className="p-3 border border-white/10 rounded-sm bg-black/50 mb-4">
             <UsersIcon />
           </div>
-          <div className="text-left">
-            <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">IETE STUDENTS' FORUM</p>
-            <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
-              ORGANIZING <span className="text-primary">TEAM</span>
-            </h2>
-          </div>
+          <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">IETE STUDENTS' FORUM</p>
+          <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
+            ORGANIZING <span className="text-primary">TEAM</span>
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
