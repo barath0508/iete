@@ -38,8 +38,8 @@ const FAQSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.faq-header', {
-        opacity: 0, y: 40, duration: 0.8, ease: 'power3.out',
+      gsap.from(['.faq-header > *', '.faq-desc'], {
+        opacity: 0, y: 40, duration: 0.8, stagger: 0.15, ease: 'power3.out',
         scrollTrigger: { trigger: sectionRef.current, start: 'top 85%' }
       });
       itemsRef.current.forEach((item, i) => {
@@ -95,7 +95,7 @@ const FAQSection = () => {
             FREQUENTLY ASKED <span className="text-primary">QUESTIONS</span>
           </h2>
         </div>
-        <p className="text-zinc-400 mb-16 max-w-xl mx-auto text-center">Everything you need to know before powering up.</p>
+        <p className="text-zinc-400 mb-16 max-w-xl mx-auto text-center faq-desc">Everything you need to know before powering up.</p>
 
         <div className="flex flex-col gap-4">
           {faqs.map((faq, i) => (

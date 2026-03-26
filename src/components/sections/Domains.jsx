@@ -38,10 +38,10 @@ const Domains = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(headlineRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' } }
-      );
+      gsap.from(['.domains-header > *', '.domains-desc'], {
+        opacity: 0, y: 30, duration: 0.8, stagger: 0.15, ease: 'power3.out', 
+        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' }
+      });
 
       gsap.fromTo(cardsRef.current,
         { opacity: 0, clipPath: 'inset(100% 0 0 0)' },
@@ -89,7 +89,7 @@ const Domains = () => {
   return (
     <section id="tracks" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5 bg-carbon/50 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div ref={headlineRef} className="flex flex-col items-center text-center mb-6">
+        <div ref={headlineRef} className="flex flex-col items-center text-center mb-6 domains-header">
           <div className="p-3 border border-white/10 rounded-sm bg-black/50 mb-4">
             <TrackIcon />
           </div>
@@ -98,7 +98,7 @@ const Domains = () => {
             TWO <span className="text-primary">TRACKS</span>
           </h2>
         </div>
-        <p className="text-zinc-400 mb-16 max-w-xl mx-auto text-center">Pick your domain — whether you think in code or circuits.</p>
+        <p className="text-zinc-400 mb-16 max-w-xl mx-auto text-center domains-desc">Pick your domain — whether you think in code or circuits.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {tracks.map((track, i) => (

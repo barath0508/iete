@@ -27,8 +27,8 @@ const TimelineSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.schedule-header', {
-        opacity: 0, y: 40, duration: 0.8, ease: 'power3.out',
+      gsap.from(['.schedule-header > *', '.schedule-desc'], {
+        opacity: 0, y: 40, duration: 0.8, stagger: 0.15, ease: 'power3.out',
         scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' }
       });
 
@@ -83,7 +83,7 @@ const TimelineSection = () => {
             THE <span className="text-primary">SCHEDULE</span>
           </h2>
         </div>
-        <p className="text-zinc-400 mb-16 max-w-xl mx-auto text-center">A power-packed 5 hours of innovation.</p>
+        <p className="text-zinc-400 mb-16 max-w-xl mx-auto text-center schedule-desc">A power-packed 5 hours of innovation.</p>
 
         <div className="relative max-w-3xl mx-auto pl-8 md:pl-0">
           <div className="absolute top-0 bottom-0 left-8 md:left-1/2 md:-translate-x-1/2 w-0.5 bg-white/10"></div>

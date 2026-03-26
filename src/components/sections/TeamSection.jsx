@@ -50,7 +50,7 @@ const TeamSection = () => {
     const ctx = gsap.context(() => {
       if (headerRef.current) {
         gsap.from(headerRef.current.children, {
-          opacity: 0, y: 40, duration: 0.2, ease: 'power3.out',
+          opacity: 0, y: 40, duration: 0.8, stagger: 0.15, ease: 'power3.out',
           scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' }
         });
       }

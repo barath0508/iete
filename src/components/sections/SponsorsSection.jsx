@@ -34,8 +34,8 @@ const SponsorsSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.sponsors-header', {
-        opacity: 0, y: 40, duration: 0.8, ease: 'power3.out',
+      gsap.from(['.sponsors-header > *', '.sponsors-desc'], {
+        opacity: 0, y: 40, duration: 0.8, stagger: 0.15, ease: 'power3.out',
         scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' }
       });
       gsap.from('.marquee-row', {
@@ -64,7 +64,7 @@ const SponsorsSection = () => {
             POWERED BY <span className="text-primary">THE BEST</span>
           </h2>
         </div>
-        <p className="text-zinc-400 mb-6 max-w-xl mx-auto text-center">Our partners and sponsors fuel the mission.</p>
+        <p className="text-zinc-400 mb-6 max-w-xl mx-auto text-center sponsors-desc">Our partners and sponsors fuel the mission.</p>
       </div>
 
       <div className="flex flex-col gap-6 opacity-70">
