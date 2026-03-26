@@ -4,6 +4,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const TrophyIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+  </svg>
+);
+
 const Rewards = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
@@ -56,11 +62,19 @@ const Rewards = () => {
 
   return (
     <section id="prizes" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5 bg-gradient-to-b from-transparent to-black/80">
-      <div className="container mx-auto px-6 md:px-12 text-center">
-        <h2 className="rewards-header text-4xl md:text-6xl font-display font-black tracking-tighter text-white mb-6">
-          WHAT'S ON <span className="text-primary animate-glow-pulse">THE LINE</span>
-        </h2>
-        <p className="text-zinc-400 mb-16 max-w-xl mx-auto">Cash prizes, certificates, and bragging rights await the best energy innovators.</p>
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+        <div className="rewards-header flex items-start gap-6 mb-6">
+          <div className="p-3 border border-white/10 rounded-sm bg-black/50">
+            <TrophyIcon />
+          </div>
+          <div className="text-left">
+            <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">PRIZES & REWARDS</p>
+            <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
+              WHAT'S ON <span className="text-primary">THE LINE</span>
+            </h2>
+          </div>
+        </div>
+        <p className="text-zinc-400 mb-16 max-w-3xl">Cash prizes, certificates, and bragging rights await the best energy innovators.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {/* Runner Up */}

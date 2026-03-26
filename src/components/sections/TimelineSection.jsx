@@ -4,6 +4,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const ClockIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+    <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+  </svg>
+);
+
 const TimelineSection = () => {
   const sectionRef = useRef(null);
   const lineRef = useRef(null);
@@ -68,12 +74,18 @@ const TimelineSection = () => {
   return (
     <section id="schedule" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center mb-16 schedule-header">
-          <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter text-white">
-            THE <span className="text-primary text-glow">SCHEDULE</span>
-          </h2>
-          <p className="text-zinc-400 mt-4 max-w-xl mx-auto">April 8, 2026 — A power-packed 5 hours of innovation.</p>
+        <div className="schedule-header flex items-start gap-6 mb-6">
+          <div className="p-3 border border-white/10 rounded-sm bg-black/50">
+            <ClockIcon />
+          </div>
+          <div className="text-left">
+            <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">APRIL 8, 2026</p>
+            <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
+              THE <span className="text-primary">SCHEDULE</span>
+            </h2>
+          </div>
         </div>
+        <p className="text-zinc-400 mb-16 max-w-3xl">A power-packed 5 hours of innovation.</p>
 
         <div className="relative max-w-3xl mx-auto pl-8 md:pl-0">
           <div className="absolute top-0 bottom-0 left-8 md:left-1/2 md:-translate-x-1/2 w-0.5 bg-white/10"></div>

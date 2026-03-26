@@ -4,6 +4,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const TrackIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+    <path d="M16 3h5v5" /><path d="M8 3H3v5" /><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" /><path d="m15 9 6-6" />
+  </svg>
+);
+
 const Domains = () => {
   const sectionRef = useRef(null);
   const headlineRef = useRef(null);
@@ -83,17 +89,18 @@ const Domains = () => {
   return (
     <section id="tracks" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5 bg-carbon/50 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div ref={headlineRef} className="text-center mb-16">
-          <div className="inline-flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-primary"></div>
-            <span className="text-primary font-bold tracking-widest text-sm uppercase">Choose Your Track</span>
-            <div className="h-px w-12 bg-primary"></div>
+        <div ref={headlineRef} className="flex items-start gap-6 mb-6">
+          <div className="p-3 border border-white/10 rounded-sm bg-black/50">
+            <TrackIcon />
           </div>
-          <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter text-white">
-            TWO <span className="text-glow text-primary">TRACKS</span>
-          </h2>
-          <p className="text-zinc-400 mt-4 max-w-xl mx-auto">Pick your domain — whether you think in code or circuits.</p>
+          <div className="text-left">
+            <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">CHOOSE YOUR TRACK</p>
+            <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
+              TWO <span className="text-primary">TRACKS</span>
+            </h2>
+          </div>
         </div>
+        <p className="text-zinc-400 mb-16 max-w-3xl">Pick your domain — whether you think in code or circuits.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {tracks.map((track, i) => (

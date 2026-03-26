@@ -84,18 +84,20 @@ const FAQSection = () => {
   return (
     <section id="faqs" ref={sectionRef} className="py-24 md:py-32 relative z-10 border-t border-white/5 bg-[#030a07]">
       <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-        <div className="faq-header text-center mb-16">
-          <p className="text-primary/90 text-sm font-bold tracking-[0.25em] mb-4 uppercase">GOT QUESTIONS?</p>
-          <h2 className="text-4xl md:text-5xl font-display font-black tracking-tighter text-white mb-1 uppercase">
-            FREQUENTLY ASKED
-          </h2>
-          <h2 className="text-4xl md:text-5xl font-display font-black tracking-tighter text-primary mb-6 uppercase">
-            QUESTIONS
-          </h2>
-          <p className="text-zinc-400 text-sm md:text-base font-medium">
-            Everything you need to know before powering up.
-          </p>
+        <div className="faq-header flex items-start gap-6 mb-6">
+          <div className="p-3 border border-white/10 rounded-sm bg-black/50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+              <circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" />
+            </svg>
+          </div>
+          <div className="text-left">
+            <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">GOT QUESTIONS?</p>
+            <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
+              FREQUENTLY ASKED <span className="text-primary">QUESTIONS</span>
+            </h2>
+          </div>
         </div>
+        <p className="text-zinc-400 mb-16 max-w-3xl">Everything you need to know before powering up.</p>
 
         <div className="flex flex-col gap-4">
           {faqs.map((faq, i) => (

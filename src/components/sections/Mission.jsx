@@ -61,14 +61,19 @@ const Mission = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div ref={textRef}>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="h-px w-12 bg-primary"></div>
-              <span className="text-primary font-bold tracking-widest text-sm uppercase">The Mission</span>
+            <div className="flex items-start gap-6 mb-6">
+              <div className="p-3 border border-white/10 rounded-sm bg-black/50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                  <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" /><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                </svg>
+              </div>
+              <div className="text-left">
+                <p className="text-primary/70 text-xs font-bold tracking-[0.2em] mb-1 uppercase">THE MISSION</p>
+                <h2 className="text-3xl md:text-5xl font-display font-black tracking-tighter text-white">
+                  IT'S NOT JUST A <span className="text-primary">HACKATHON.</span>
+                </h2>
+              </div>
             </div>
-            <h2 className="text-4xl md:text-6xl font-display font-black tracking-tighter mb-8 text-white">
-              IT'S NOT JUST A <br /> 
-              <span className="text-primary border-b-4 border-primary">HACKATHON.</span>
-            </h2>
             <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
               Whether you're a software wizard or a hardware geek, it's time to innovate the grid! ENERGIZE 2026 challenges you to build the future of sustainable energy technology.
             </p>
